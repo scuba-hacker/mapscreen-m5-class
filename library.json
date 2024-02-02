@@ -1,0 +1,8 @@
+{
+    "dependencies":
+    {
+        "mapscreen-ex-class": "https://github.com/scuba-hacker/mapscreen-ex-class",
+        "nav-waypoints": "https://github.com/scuba-hacker/navigation-waypoints",
+        "M5-Stick-CPlus": "https://github.com/scuba-hacker/M5StickC-Plus#UseExternalTFT_eSPI"
+    }
+}

@@ -83,7 +83,7 @@ MapScreen_ex::pixel MapScreen_M5::getRegistrationMarkLocation(int index)
         return pixel(-1,-1);
 }
 
-MapScreen_M5::MapScreen_M5(TFT_eSPI& tft, M5StickCPlus& m5) : MapScreen_ex(tft, s_mapM5Attr), _m5(m5)
+MapScreen_M5::MapScreen_M5(TFT_eSPI& tft, M5StickCPlus& m5) : MapScreen_ex(tft, s_mapM5Attr), _m5(m5), _priorToZoneZoom(1)
 {
   initMapScreen();
 }

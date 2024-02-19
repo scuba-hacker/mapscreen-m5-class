@@ -60,6 +60,7 @@ const MapScreen_ex::MapScreenAttr MapScreen_M5::s_mapM5Attr =
   .headingIndicatorOffsetY = 0,
 
   .diverHeadingColour = TFT_BLUE,
+  .diverHeadingLinePixelLength = 50;
 
   .featureSpriteColour = TFT_MAGENTA,
   .featureSpriteRadius = 5,
@@ -72,6 +73,15 @@ const MapScreen_ex::MapScreenAttr MapScreen_M5::s_mapM5Attr =
 
   .targetLineColour = TFT_RED,
   .targetLinePixelLength = 100,
+
+  .breadCrumbColour = TFT_RED,
+  .breadCrumbWidth = 21,
+  .breadCrumbDropFixCount = 5,    // record location every 5 fixes.
+
+  .pinBackColour = TFT_DARKGREEN,
+  .pinForeColour = TFT_ORANGE,
+  .pinWidth = 10,
+
   .useSpriteForFeatures = true
 };
 

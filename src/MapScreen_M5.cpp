@@ -4,7 +4,7 @@
 
 #include <M5StickCPlus.h>
 
-#include "fonts/NotoSansMonoSCB20.h"
+//#include "fonts/NotoSansMonoSCB20.h"
 
 extern const uint16_t w1_1[];
 extern const uint16_t w1_2[];
@@ -102,8 +102,8 @@ void MapScreen_M5::initMapScreen()
 {
   MapScreen_ex::initMapScreen();
 
-  getCompositeSprite().loadFont(NotoSansMonoSCB20);
-  getCleanMapSprite().loadFont(NotoSansMonoSCB20);
+//  getCompositeSprite().loadFont(NotoSansMonoSCB20);
+//  getCleanMapSprite().loadFont(NotoSansMonoSCB20);
 }
 
 void MapScreen_M5::copyFullScreenSpriteToDisplay(TFT_eSprite& sprite)

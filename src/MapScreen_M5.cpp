@@ -69,7 +69,7 @@ const MapScreen_ex::MapScreenAttr MapScreen_M5::s_mapM5Attr =
   .lastTargetSpriteColour = TFT_BLUE,
 
   .nearestExitLineColour = TFT_DARKGREEN,
-  .nearestExitLineLength = 70,
+  .nearestExitLinePixelLength = 70,
 
   .targetLineColour = TFT_RED,
   .targetLinePixelLength = 100,

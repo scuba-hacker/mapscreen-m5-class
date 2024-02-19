@@ -39,6 +39,7 @@ class MapScreen_M5 : public MapScreen_ex
     static const std::array<MapScreen_ex::MapScreen_ex::BoundingBox, 2> boundingBoxesSub;
 
     static const MapScreenAttr s_mapM5Attr;
+    int _priorToZoneZoom;
 
     public:
         MapScreen_M5(TFT_eSPI& tft, M5StickCPlus& m5);

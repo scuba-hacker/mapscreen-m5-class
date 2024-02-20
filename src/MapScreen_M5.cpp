@@ -2,7 +2,7 @@
 
 #include <MapScreen_M5.h>
 
-#include <M5StickCPlus.h>
+#include "TFT_eSPI.h"
 
 //#include "fonts/NotoSansMonoSCB20.h"
 
@@ -48,7 +48,6 @@ const std::array<MapScreen_ex::pixel, MapScreen_M5::s_registrationPixelsSize> Ma
 }
 };
 
-
 const MapScreen_ex::MapScreenAttr MapScreen_M5::s_mapM5Attr = 
 {
   .diverSpriteColour = TFT_BLUE,
@@ -93,7 +92,7 @@ MapScreen_ex::pixel MapScreen_M5::getRegistrationMarkLocation(int index)
         return pixel(-1,-1);
 }
 
-MapScreen_M5::MapScreen_M5(TFT_eSPI& tft, M5StickCPlus& m5) : MapScreen_ex(tft, s_mapM5Attr), _m5(m5), _priorToZoneZoom(1)
+MapScreen_M5::MapScreen_M5(TFT_eSPI& tft) : MapScreen_ex(tft, s_mapM5Attr), _priorToZoneZoom(1)
 {
   initMapScreen();
 }

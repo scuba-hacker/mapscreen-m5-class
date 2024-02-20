@@ -3,8 +3,6 @@
 
 #include <MapScreen_ex.h>
 
-class M5StickCPlus;
-
 class MapScreen_M5 : public MapScreen_ex
 {
     static constexpr int s_registrationPixelsSize = 16;
@@ -14,8 +12,6 @@ class MapScreen_M5 : public MapScreen_ex
     static const int16_t mX_t3 = 135,  hX_t3 = 67;
     static const int16_t mY_t3 = 240,  hY_t3 = 120;
     static const int16_t o = 10;
-
-    M5StickCPlus& _m5;
 
     virtual int getFirstDetailMapIndex() override { return _northMapIndex;}
     virtual int getEndDetailMaps() override { return _allLakeMapIndex; }
@@ -41,8 +37,13 @@ class MapScreen_M5 : public MapScreen_ex
     static const MapScreenAttr s_mapM5Attr;
     int _priorToZoneZoom;
 
+    virtual bool useBaseMapCache() const override
+    {
+        return false;
+    }
+
     public:
-        MapScreen_M5(TFT_eSPI& tft, M5StickCPlus& m5);
+        MapScreen_M5(TFT_eSPI& tft);
         void initMapScreen();
 
         virtual MapScreen_ex::pixel getRegistrationMarkLocation(int index) override;

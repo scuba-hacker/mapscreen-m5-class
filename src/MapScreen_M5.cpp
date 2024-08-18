@@ -115,17 +115,6 @@ void MapScreen_M5::fillScreen(int colour)
   _tft.fillScreen(colour);
 }
 
-void MapScreen_M5::writeMapTitleToSprite(TFT_eSprite& sprite, const MapScreen_ex::geo_map& map)
-{
-    if (map.backText)
-    {
-      sprite.setCursor(5,5);
-      sprite.setTextSize(3);
-      sprite.setTextColor(TFT_BLACK, map.backColour);
-      sprite.println(map.backText);
-    }
-}
-
 const MapScreen_ex::geo_map* MapScreen_M5::getNextMapByPixelLocation(MapScreen_ex::pixel loc, const MapScreen_ex::geo_map* thisMap)
 {
   const MapScreen_ex::geo_map* nextMap = thisMap;

@@ -55,7 +55,6 @@ class MapScreen_M5 : public MapScreen_ex
 
         virtual void fillScreen(int colour) override;
         virtual void copyFullScreenSpriteToDisplay(TFT_eSprite& sprite) override;
-        virtual void writeMapTitleToSprite(TFT_eSprite& sprite, const MapScreen_ex::geo_map& map) override;
 
         virtual bool isPixelInCanoeZone(const MapScreen_ex::pixel loc, const MapScreen_ex::geo_map& thisMap) const override;
         virtual bool isPixelInSubZone(const MapScreen_ex::pixel loc, const MapScreen_ex::geo_map& thisMap) const override;

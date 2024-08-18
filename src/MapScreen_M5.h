@@ -41,6 +41,8 @@ class MapScreen_M5 : public MapScreen_ex
     {
         return false;
     }
+    virtual void writeMapTitleToSprite(TFT_eSprite& sprite, const geo_map& map)
+    { }
 
     public:
         MapScreen_M5(TFT_eSPI& tft);

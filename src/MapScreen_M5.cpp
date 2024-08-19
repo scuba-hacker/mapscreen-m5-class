@@ -54,7 +54,7 @@ const MapScreen_ex::MapScreenAttr MapScreen_M5::s_mapM5Attr =
   .diverSpriteRadius = 12,
 
   .headingIndicatorColour = TFT_RED,
-  .headingIndicatorRadius = 8,
+  .headingIndicatorRadius = 5,
   .headingIndicatorOffsetX = 15,
   .headingIndicatorOffsetY = 0,
 
@@ -62,7 +62,7 @@ const MapScreen_ex::MapScreenAttr MapScreen_M5::s_mapM5Attr =
   .diverHeadingLinePixelLength = 50,
 
   .featureSpriteColour = TFT_MAGENTA,
-  .featureSpriteRadius = 5,
+  .featureSpriteRadius = 3,
 
   .targetSpriteColour = TFT_RED,
   .lastTargetSpriteColour = TFT_BLUE,

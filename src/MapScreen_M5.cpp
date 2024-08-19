@@ -51,7 +51,7 @@ const std::array<MapScreen_ex::pixel, MapScreen_M5::s_registrationPixelsSize> Ma
 const MapScreen_ex::MapScreenAttr MapScreen_M5::s_mapM5Attr = 
 {
   .diverSpriteColour = TFT_BLUE,
-  .diverSpriteRadius = 15,
+  .diverSpriteRadius = 12,
 
   .headingIndicatorColour = TFT_RED,
   .headingIndicatorRadius = 8,

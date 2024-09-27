@@ -81,7 +81,10 @@ const MapScreen_ex::MapScreenAttr MapScreen_M5::s_mapM5Attr =
   .pinForeColour = TFT_ORANGE,
   .pinWidth = 10,
 
-  .useSpriteForFeatures = false
+  .useSpriteForFeatures = false,
+
+  .traceColour = TFT_DARKGREY,
+  .tracePointSize = 2
 };
 
 MapScreen_ex::pixel MapScreen_M5::getRegistrationMarkLocation(int index) 

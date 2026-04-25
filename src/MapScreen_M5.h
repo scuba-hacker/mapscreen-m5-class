@@ -3,6 +3,8 @@
 
 #include <MapScreen_ex.h>
 
+#include "NavigationWaypoints.h"
+
 class MapScreen_M5 : public MapScreen_ex
 {
     static constexpr int s_registrationPixelsSize = 16;
@@ -47,6 +49,7 @@ class MapScreen_M5 : public MapScreen_ex
     public:
         MapScreen_M5(TFT_eSPI& tft);
         void initMapScreen();
+        virtual void initFirstAndEndWaypointsIndices();
 
         virtual MapScreen_ex::pixel getRegistrationMarkLocation(int index) override;
 

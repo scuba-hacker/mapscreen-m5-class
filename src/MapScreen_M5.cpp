@@ -14,13 +14,13 @@ extern const uint16_t wraysbury_x1[];
 
 const MapScreen_ex::geo_map MapScreen_M5::s_maps[] =
 {
-  [0] = { .mapData = w1_1, .label="North", .backColour=TFT_BLACK, .backText="", .surveyMap=false, .swapBytes=false, .mapLongitudeLeft = -0.55, .mapLongitudeRight = -0.548, .mapLatitudeBottom = 51.4604},
-  [1] = { .mapData = w1_2, .label="Cafe", .backColour=TFT_BLACK, .backText="", .surveyMap=false, .swapBytes=false, .mapLongitudeLeft = -0.5495, .mapLongitudeRight = -0.5475, .mapLatitudeBottom = 51.4593},
-  [2] = { .mapData = w1_3, .label="Mid", .backColour=TFT_BLACK, .backText="", .surveyMap=false, .swapBytes=false, .mapLongitudeLeft = -0.5478, .mapLongitudeRight = -0.5458, .mapLatitudeBottom = 51.4588},
-  [3] = { .mapData = w1_4, .label="South", .backColour=TFT_BLACK, .backText="", .surveyMap=false, .swapBytes=false, .mapLongitudeLeft = -0.5471, .mapLongitudeRight = -0.5451, .mapLatitudeBottom = 51.4583},
-  [4] = { .mapData = wraysbury_x1, .label="All", .backColour=TFT_BLACK, .backText="", .surveyMap=false, .swapBytes=false, .mapLongitudeLeft = -0.5499, .mapLongitudeRight = -0.5452, .mapLatitudeBottom = 51.457350},
-  [5] = { .mapData = nullptr, .label="Canoe", .backColour=TFT_CYAN, .backText="Canoe",.surveyMap=true, .swapBytes=false, .mapLongitudeLeft = -0.54910, .mapLongitudeRight = -0.54880, .mapLatitudeBottom = 51.46190}, // Canoe area
-  [6] = { .mapData = nullptr, .label="Sub",  .backColour=TFT_CYAN, .backText="Sub",.surveyMap=true, .swapBytes=false, .mapLongitudeLeft = -0.54931, .mapLongitudeRight = -0.54900, .mapLatitudeBottom = 51.4608}, // Sub area
+  [0] = { .mapData = w1_1, .png="", .label="North", .backColour=TFT_BLACK, .backText="", .surveyMap=false, .swapBytes=false, .mapLongitudeLeft = -0.55, .mapLongitudeRight = -0.548, .mapLatitudeBottom = 51.4604},
+  [1] = { .mapData = w1_2, .png="", .label="Cafe", .backColour=TFT_BLACK, .backText="", .surveyMap=false, .swapBytes=false, .mapLongitudeLeft = -0.5495, .mapLongitudeRight = -0.5475, .mapLatitudeBottom = 51.4593},
+  [2] = { .mapData = w1_3, .png="", .label="Mid", .backColour=TFT_BLACK, .backText="", .surveyMap=false, .swapBytes=false, .mapLongitudeLeft = -0.5478, .mapLongitudeRight = -0.5458, .mapLatitudeBottom = 51.4588},
+  [3] = { .mapData = w1_4, .png="", .label="South", .backColour=TFT_BLACK, .backText="", .surveyMap=false, .swapBytes=false, .mapLongitudeLeft = -0.5471, .mapLongitudeRight = -0.5451, .mapLatitudeBottom = 51.4583},
+  [4] = { .mapData = wraysbury_x1, .png="", .label="All", .backColour=TFT_BLACK, .backText="", .surveyMap=false, .swapBytes=false, .mapLongitudeLeft = -0.5499, .mapLongitudeRight = -0.5452, .mapLatitudeBottom = 51.457350},
+  [5] = { .mapData = nullptr, .png="", .label="Canoe", .backColour=TFT_CYAN, .backText="Canoe",.surveyMap=true, .swapBytes=false, .mapLongitudeLeft = -0.54910, .mapLongitudeRight = -0.54880, .mapLatitudeBottom = 51.46190}, // Canoe area
+  [6] = { .mapData = nullptr, .png="", .label="Sub",  .backColour=TFT_CYAN, .backText="Sub",.surveyMap=true, .swapBytes=false, .mapLongitudeLeft = -0.54931, .mapLongitudeRight = -0.54900, .mapLatitudeBottom = 51.4608}, // Sub area
 };
 
 const std::array<MapScreen_ex::pixel, MapScreen_M5::s_registrationPixelsSize> MapScreen_M5::s_registrationPixels     // MBJ REFACTOR - HOW TO GET RID OF s_registrationPixelsSize HERE? c.f. C array x[]
@@ -102,10 +102,17 @@ MapScreen_M5::MapScreen_M5(TFT_eSPI& tft) : MapScreen_ex(tft, s_mapM5Attr), _pri
 
 void MapScreen_M5::initMapScreen()
 {
+  initFirstAndEndWaypointsIndices();
   MapScreen_ex::initMapScreen();
 
 //  getCompositeSprite().loadFont(NotoSansMonoSCB20);
 //  getCleanMapSprite().loadFont(NotoSansMonoSCB20);
+}
+
+void MapScreen_M5::initFirstAndEndWaypointsIndices()
+{
+  _firstWaypointIndex = WraysburyWaypoints::getStartIndexWraysbury();  // default for wraysbury
+  _endWaypointsIndex = WraysburyWaypoints::getEndWaypointIndexWraysbury();
 }
 
 void MapScreen_M5::copyFullScreenSpriteToDisplay(TFT_eSprite& sprite)
